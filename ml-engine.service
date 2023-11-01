@@ -1,0 +1,14 @@
+[Unit]
+Description=Core Engine Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/hornet/Development/hornet/ml-engine
+ExecStart=/bin/bash -c '/usr/bin/sudo python3 main.py -env prod'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
